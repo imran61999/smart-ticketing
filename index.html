@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart ticketing</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body>
     <header class="m-20 mt-10">
         <div class="navbar bg-base-100">
@@ -129,7 +129,7 @@
                             </div>
                             <div class=" text-red-500 flex-row">
                                 <img src="images/seat-gray.png" alt="">
-                                <p id="seat-count">8 Seats left</p>
+                                <p id="seat-count"><span id="avail-count">8</span></span> Seats left</p>
                             </div>
 
                         </div>
@@ -176,15 +176,15 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="">
+                    <div>
                         <div class="justify-end items-end flex pt-3">
-                            <kbd class="kbd w-20"><img src="images/stering.png" alt=""></kbd>
+                            <kbd class="w-20"><img src="images/stering.png" alt=""></kbd>
                         </div>
                         <div class="flex gap-20 flex-row pt-3">
 
                             <div class="flex gap-10 flex-row">
                                 <span>A</span>
-                                <kbd onclick="play()" class="kbd w-20">A1</kbd>
+                                <kbd class="kbd w-20">A1</kbd>
                                 <kbd class="kbd w-20">A2</kbd>
                             </div>
                             <div class="flex gap-10 flex-row">
@@ -204,6 +204,89 @@
                                 <kbd class="kbd w-20">B4</kbd>
                             </div>
                         </div>
+                        <div class="flex gap-20 flex-row pt-3">
+
+                            <div class="flex gap-10 flex-row">
+                                <span>C</span>
+                                <kbd class="kbd w-20">C1</kbd>
+                                <kbd class="kbd w-20">C2</kbd>
+                            </div>
+                            <div class="flex gap-10 flex-row">
+                                <kbd class="kbd w-20">C3</kbd>
+                                <kbd class="kbd w-20">C4</kbd>
+                            </div>
+                        </div>
+                        <div class="flex gap-20 flex-row pt-3">
+
+                            <div class="flex gap-10 flex-row">
+                                <span>D</span>
+                                <kbd class="kbd w-20">D1</kbd>
+                                <kbd class="kbd w-20">D2</kbd>
+                            </div>
+                            <div class="flex gap-10 flex-row">
+                                <kbd class="kbd w-20">D3</kbd>
+                                <kbd class="kbd w-20">D4</kbd>
+                            </div>
+                        </div>
+                        <div class="flex gap-20 flex-row pt-3">
+
+                            <div class="flex gap-10 flex-row">
+                                <span>E</span>
+                                <kbd class="kbd w-20">E1</kbd>
+                                <kbd class="kbd w-20">E2</kbd>
+                            </div>
+                            <div class="flex gap-10 flex-row">
+                                <kbd class="kbd w-20">E3</kbd>
+                                <kbd class="kbd w-20">E4</kbd>
+                            </div>
+                        </div>
+                        <div class="flex gap-20 flex-row pt-3">
+
+                            <div class="flex gap-10 flex-row">
+                                <span>F</span>
+                                <kbd class="kbd w-20">F1</kbd>
+                                <kbd class="kbd w-20">F2</kbd>
+                            </div>
+                            <div class="flex gap-10 flex-row">
+                                <kbd class="kbd w-20">F3</kbd>
+                                <kbd class="kbd w-20">F4</kbd>
+                            </div>
+                        </div>
+                        <div class="flex gap-20 flex-row pt-3">
+
+                            <div class="flex gap-10 flex-row">
+                                <span>G</span>
+                                <kbd class="kbd w-20">G1</kbd>
+                                <kbd class="kbd w-20">G2</kbd>
+                            </div>
+                            <div class="flex gap-10 flex-row">
+                                <kbd class="kbd w-20">G3</kbd>
+                                <kbd class="kbd w-20">G4</kbd>
+                            </div>
+                        </div>
+                        <div class="flex gap-20 flex-row pt-3">
+
+                            <div class="flex gap-10 flex-row">
+                                <span>H</span>
+                                <kbd class="kbd w-20">H1</kbd>
+                                <kbd class="kbd w-20">H2</kbd>
+                            </div>
+                            <div class="flex gap-10 flex-row">
+                                <kbd class="kbd w-20">H3</kbd>
+                                <kbd class="kbd w-20">H4</kbd>
+                            </div>
+                        </div>
+                        <div class="flex gap-20 flex-row pt-3">
+
+                            <div class="flex gap-4 text-center flex-row">
+                                <span class="mr-10">I</span>
+                                <kbd class="kbd w-20">I1</kbd>
+                                <kbd class="kbd w-20">I2</kbd>
+                                <kbd class="kbd w-20">I3</kbd>
+                                <kbd class="kbd w-20">I4</kbd>
+                                <kbd class="kbd w-20">I5</kbd>
+                            </div>
+                        </div>
                         <div></div>
                     </div>
                 </div>
@@ -213,45 +296,57 @@
                     <div class=" mt-5 w-auto">
                         <div class="bg-[#F7F8F8] p-3">
                             <div class="font-bold flex flex-row justify-between py-2">
-                                <p>Seat</p>
+                                <p>Seat(<span id="booked">0</span>)</p>
                                 <p>Class</p>
                                 <p>Price</p>
                             </div>
                             <hr>
-                            <div  id="selected-seat" class="flex flex-row justify-between py-2">
-                                <span>C2</span> <br>
-                                <span>Economoy</span> <br>
-                                <span>550</span>
+                            <div  id="selected-seat" class="py-2">
+                               
                             </div>
-                            <!-- <div class="flex flex-row justify-between py-2">
-                                <p>C2</p>
-                                <p>Economoy</p>
-                                <p>550</p>
-                            </div> -->
                             <hr>
                             <div class="flex flex-row justify-between py-2">
                                 <p>Total Price</p>
-                                <p>BDT 1100</p>
+                                <p>BDT <span id="total">0</span></p>
                             </div>
                             <label class="input input-bordered flex items-center gap-2 py-2">
-                                <input type="text" class="grow" placeholder="Have any copupon?" />
-                                <button class="bg-orange-500 rounded-lg p-2">Apply</button>
+                                <input id="couponInput" type="text" class="grow" placeholder="Have any copupon?" />
+                                <button id="applyButton" class="bg-orange-500 rounded-lg p-2">Apply</button>
                             </label>
                             <div class="flex flex-row justify-between py-2">
                                 <p>Grand Total</p>
-                                <p>BDT 1100</p>
+                                <p>BDT <span id="grandTotalId">0</span></p>
                             </div>
+                            
+                        </div>
+                        <div class="flex py-5 justify-center">
+                            <button id="nextButton" class="bg-[#1DD100] text-white w-60 h-10 rounded-full">Next</button>
                         </div>
                     </div>
                     
                 </div>
             </div>
         </section>
+        <!-- success section -->
+        <dialog id="my_modal_5" class="bg-[#F7F8F8]">
+            <div class="mx-72 flex justify-center items-center min-h-screen">
+                <div class="text-center space-y-6 bg-[#FFFFFF] p-4 rounded-lg">
+                    <div class="flex justify-center">
+                        <img src="images/success.png" alt="">
+                    </div>
+                    <h1 class="text-3xl text-red-500">SUCCESS</h1>
+                    <p class="font-semibold text-xl">Thank you for Booking Our Bus Seats. 
+                        We are working hard to find the best service and deals for you. </p>
+                    <p>Shortly you will find a confirmation in your email.</p>
+                    <button id="closeModalButton" class="w-52 h-10 rounded-full text-white bg-[#27AE60]">Continue</button>
+                </div>
+            </div>
+        </dialog>
     </main>
     <footer>
 
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/utiluty.js"></script>
 </body>
 
 </html>
